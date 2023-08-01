@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">   <!--internete bağlanmıyor. unique identifier that configured in the thymeleaf JAR file-->
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Login Page</title>
+
+    <style>
+        .failed{
+        color:red;
+        }
+    </style>
+</head>
+<body>
+<h3>My Custom Login PAGE</h3>
+
+<form action="#" th:action="@{/authenticateTheUser}" method="POST">
+    <!--Check for login error-->
+    <div th:if="${param.error}">
+        <i class="failed">You entered invalid username or password!!!</i>
+    </div>
+
+
+    <p>
+    User name:<input type="text" name="username" />
+  </p>
+
+  <p>
+    password:<input type="password" name="password"/>
+  </p>
+  <input type="submit" value="Login">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
